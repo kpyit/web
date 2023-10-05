@@ -1,0 +1,41 @@
+
+@main_color: #3c3d3c;
+@main_color_text: #ededed;
+@main_link_color: #97d4ff;
+@main_link_color_visited: hsl(99, 100%, 87%);
+
+
+body { 
+    color: @main_color_text;
+    background-color: @main_color;
+}
+a:link {
+    color: @main_link_color;
+}
+a:visited {
+    color: @main_link_color_visited;
+}
+
+img {
+    width: 400px;
+    height: auto;
+}
+
+.image-galery {
+    width: 804px;
+    border: 0px;
+} 
+
+@font-face {
+font-family: 'Pobeda Regular';
+src: url('/fonts/pobeda_regular.eot'); /* IE 9 Compatibility Mode */
+src: url('/fonts/pobeda_regular.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
+    url('/fonts/pobeda_regular.woff2') format('woff2'), /* Super Modern Browsers */
+    url('/fonts/pobeda_regular.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
+    url('/fonts/pobeda_regular.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('/fonts/pobeda_regular.svg#pobeda_regular') format('svg'); /* Chrome < 4, Legacy iOS */
+}
+
+p{
+    font-family: "Pobeda Regular", serif;
+}
