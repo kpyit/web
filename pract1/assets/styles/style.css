@@ -1,0 +1,58 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('FileName.eot');
+    src: url('../fonts/Roboto-Bold.ttf') format('truetype');
+    font-style: normal;   
+    font-weight: bold;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('FileName.eot');
+    src: url('../fonts/Roboto-Regular.ttf') format('truetype');
+    font-style: normal;   
+    font-weight: normal;
+}
+
+h1 {
+    color: #000;
+    font-family: Roboto;
+    font-weight: bold;
+}
+ 
+.title {
+    font-size: 45px;
+    line-height: normal;
+    color:aquamarine;
+}
+
+.decription {
+    color:#acf;
+    font-size: 30px;
+    /* font-style: italic; */
+    font-family: Roboto;
+    font-weight: bold;
+    width: 600px;
+}
+
+.p-wrapper {
+    display: flex; /* разрешает несколько обьектов в строку*/
+    /* в хроме выпадает панелька в которой все возможные вариации flex есть можно потестить и просто скопировать в свой проект*/
+}
+
+.box {
+    margin-top: 50px;
+    margin: 40px;/*со всех сторон*/
+    border: 2px solid yellow;
+}
+
+.box-deck {
+    margin-top: 20px;
+}
+
+.pic-main
+{
+    width: 200px;
+    height: 200px;
+ 
+}
+

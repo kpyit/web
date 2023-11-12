@@ -1,0 +1,211 @@
+@font-face {
+    font-family: "Gilroy-Regular";
+    src: url("../fonts/gilroy-regular.ttf") format('truetype');
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Gilroy-Medium";
+    src: url("../fonts/gilroy-medium.ttf") format('truetype');
+    font-style: normal;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Gilroy-Semibold";
+    src: url("../fonts/gilroy-semibold.ttf") format('truetype');
+    font-style: normal;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Gilroy-Bold";
+    src: url("../fonts/gilroy-bold.ttf") format('truetype');
+    font-style: normal;
+    font-weight: 700;
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: "Gilroy-Medium", serif;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+
+
+.logo__img {
+    width: 35px;
+    height: 40px;
+}
+
+.header {
+    width: 1240px;
+    height: 120px;
+    margin-left: auto;
+    margin-right: auto;
+
+    background: #FFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+}
+
+.text__logo {
+    color: #000;
+
+    font-family: Gilroy-Bold;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.text__logo>span {
+    color: #F25822;
+}
+
+.menu {
+    height: 40px;
+    background: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+
+
+}
+
+.header__item {
+    color: #000;
+    font-family: Gilroy-Medium;  
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.selected_menu_item {
+    color: #F25822;
+    font-family: Gilroy-SemiBold;
+}
+
+.menu__options {
+    margin: auto 1px; 
+}
+
+/* секкция промо */
+.promo {
+    width: 1240px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.promo__text {
+    width: 540px;
+}
+
+.promo__text>h1 {
+    color: #000;
+
+    font-family: Gilroy-Bold;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 60px;
+
+    line-height: normal;
+}
+
+.promo__text>p {
+    color: #888;
+
+    font-family: Gilroy-Medium;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    margin-top: 17px;
+}
+
+.promo__buttons {
+    margin-top: 37px;
+    display: flex;
+    gap: 72px;    
+}
+
+.btn__start {
+    width: 140px;
+    height: 50px;
+    border-radius: 50px;
+    
+
+    font-family: Gilroy-Bold;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    color: #FFF;
+    background: #F25822;
+    border: none;
+
+    box-shadow: 4px 4px 8px 0px rgba(242, 88, 34, 0.20);
+}
+
+.btn__swow {
+    width: 140px;
+    height: 50px;
+
+    color: #AAA;
+    background: #FFF;
+    border: none;
+
+    font-family: Gilroy-Bold;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.promo__image>img {
+    width: 544px;
+}
+
+/* секция лого */
+
+.logos {
+    width: 1240px;
+    height: 243px;
+    margin-left: auto;
+    margin-right: auto;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+     
+}
