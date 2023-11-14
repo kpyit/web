@@ -1,0 +1,403 @@
+@font-face {
+    font-family: "Gilroy-Regular";
+    src: url("../fonts/gilroy-regular.ttf") format('truetype');
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Gilroy-Medium";
+    src: url("../fonts/gilroy-medium.ttf") format('truetype');
+    font-style: normal;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Gilroy-Semibold";
+    src: url("../fonts/gilroy-semibold.ttf") format('truetype');
+    font-style: normal;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Gilroy-Bold";
+    src: url("../fonts/gilroy-bold.ttf") format('truetype');
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Lato";
+    src: url("../fonts/Lato-Regular.ttf") format('truetype');
+    font-style: normal;
+    font-weight: 400;
+} 
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: "Gilroy-Medium", serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.center {
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.menu_header {
+    background-color: #222;
+    margin: 0 auto;
+}
+
+.header {
+    /* все пункты меню */
+    /* по какой то причине пункты меню выпадали справа
+    за рендер но переключение режима рендера исправило проблему(bug ghrome)*/
+    max-width: 1140px;
+    height: 75px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.logo_find {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* gap: 32px; */
+    gap: 41px;
+
+    /* clamp(32px, 2vw, 48px); */
+
+}
+
+.menu {
+    max-width: 160px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 32px;
+}
+
+/* ################ promo ################ */
+
+.promo {
+    background-color: #F1E4E6;
+}
+
+.promo_banner {
+    max-height: 764px;
+    max-width: 1600px;
+
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    /* gap: 64px; */
+    /* gap:4.6vw; */
+    /* наигравцись с размерами шрифта вручную нашел
+    https://css-tricks.com/how-do-you-do-max-font-size-in-css/ */
+    font-size: clamp(39px, 4.6vw, 64px);
+    /* если будет работать в браузерах использовать 
+    font-size: min(max(16px, 4vw), 22px); */
+}
+
+.promo_banner>img {
+    /* без регулировки ширины через max вылазит за зкран 
+    и создает белую полосу которая портит верстку
+    https://www.browserstack.com/guide/how-to-resize-image-using-css */
+    width: 50%;
+    height: 100%;
+}
+
+
+.firm_logo {
+    /* border-left: 12px solid #F16D7F; */
+    border-left: clamp(6px, 0.750vw, 12px) solid #F16D7F;
+    /* height: 92px; */
+    /* height: 5.750vw; */
+    /* padding: 0 0 0 16px; */
+    padding: 0 0 0 clamp(8px, 1vw, 16px);
+    /* смещение логотипа вверх */
+    /* margin-bottom: 100px; */
+    margin-bottom: 6.250vw;
+
+}
+
+.firm_logo>h2 {
+    color: #222;
+
+    font-family: Lato;
+    /* font-size: 48px; 
+    font-size: 3vw;*/
+    font-size: clamp(44px, 3vw, 48px);
+
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+}
+
+.firm_logo>p {
+    color: #222;
+    font-family: Lato;
+    /* font-size: 32px; 
+    font-size: 2vw;*/
+    font-size: clamp(24px, 2vw, 32px);
+
+
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.firm_logo>p>span {
+    color: #F16D7F;
+    font-family: Lato;
+    /* font-size: 32px;
+    font-size: 2vw; */
+    font-size: clamp(24px, 2vw, 32px);
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+
+/* ################ for-all ################ */
+
+.indentation_f_all {
+    height: 3vw;
+}
+
+.for-all {
+    /* попытка сделаь резиновый блок */
+    width: 1140px;
+    max-width: 100%;
+
+    margin: 0 auto;
+
+
+    margin-top: 3vw;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* flex-wrap: wrap; */
+    /* row-gap: 30px; */
+    column-gap: 3vw;
+}
+
+/* попытка расположить текст по середине */
+.img_with_text {
+    position: relative;
+    text-align: center;
+    max-width: 33%;
+}
+
+.img_with_text>a>img {
+    max-width: 100%;
+}
+
+.centered-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.option-sale {
+    color: #FFF;
+    /* text-align: center; */
+    font-family: Lato;
+    /* пересчитал размер шрифта на резиновый  https://web-development.space/tools/px-to-vw/    */
+    font-size: 16px;
+    /* font-size: 1vw; */
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    white-space: nowrap;
+}
+
+.to-male {
+    color: #F16D7F;
+
+    font-family: Lato;
+    font-size: 24px;
+    /* font-size: 1.500vw;    */
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    /* clear: both; */
+    /* display: inline-block; */
+    /* overflow: hidden; */
+    white-space: nowrap;
+}
+
+/* затемнение изображения */
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 70;
+    background-color: #211616B2;
+}
+
+/* широкая ссыкка  */
+.item_wide {
+    /* position: relative; */
+    /* text-align: center;  */
+    max-width: 100%;
+    /* align-self: center;  */
+}
+
+
+
+/* ################ features ################ */
+
+.features {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.feature-header {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.feature-header>h3 {
+    margin-top: 96px;
+
+    color: #222;
+    font-family: Lato;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.feature-header>p {
+    margin-bottom: 48px;
+
+    color: #9F9F9F;
+    font-family: Lato;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+
+.list-features {
+    display: flex;
+    flex-flow: row;
+    /* разрешаем перенос */
+    flex-wrap: wrap;
+    justify-content: center;
+    /* gap: 30px; */
+    gap: clamp(16px, 1.875vw, 30px);
+
+}
+
+.feature-item {
+    max-width: 360px;
+    background-color: #F8F8F8;
+}
+
+.f_item_text {
+
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.f_item_text>img {
+    color: #222;
+}
+
+
+.f_item_text {
+    box-sizing: border-box;
+    padding: 24px 16px;
+
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    row-gap: 16px;
+}
+
+.f_item_text>h4 {
+    color: #000;
+
+    font-family: Lato;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.f_item_text>p {
+    color: #5D5D5D;
+
+    font-family: Lato;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.f_item_text>span {
+    color: #F16D7F;
+
+    font-family: Lato;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+/* кнопка внизу */
+.to-catalog {
+    margin: 48px 0;
+    display: flex;
+    justify-content: center;
+
+}
+
+.to-catalog>button {
+    padding: 15px 39px;
+
+    color: #F26376;
+
+    font-family: Lato;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    background-color: #fff; 
+ 
+    border: 2px solid #FF6A6A;
+}

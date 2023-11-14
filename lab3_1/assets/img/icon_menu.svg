@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="32"
+   height="29"
+   viewBox="0 0 32 29"
+   fill="none"
+   version="1.1"
+   id="svg18"
+   sodipodi:docname="Button copy1.svg"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs22" />
+  <sodipodi:namedview
+     id="namedview20"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="true"
+     inkscape:zoom="11.989685"
+     inkscape:cx="66.3487"
+     inkscape:cy="7.0477249"
+     inkscape:window-width="2222"
+     inkscape:window-height="1230"
+     inkscape:window-x="1026"
+     inkscape:window-y="120"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg18">
+    <inkscape:grid
+       type="xygrid"
+       id="grid128" />
+  </sodipodi:namedview>
+  <path
+     id="Forma 1"
+     d="M 0,27 V 24.31 H 32 V 27 Z M 0,16.76 v -2.69 h 32 v 2.69 z M 0,6.69 V 4 h 32 v 2.69 z"
+     fill="#e8e8e8" />
+</svg>

@@ -1,0 +1,42 @@
+@media screen and (max-width: 1140px) {
+    .header {
+        /* как дошли до мин ширины добавить отступы */
+        margin: 0 clamp(32px, 2vw, 48px);
+    }
+
+    /* блок и класс создан специально для отступов */
+    .sect-f-all {
+        padding: 0 16px;
+    }
+
+    .for-all {
+        /* padding-left: 16px; */
+        /* padding-right: 16px; */
+        /* margin-left: 16px; */
+        /* margin-right: 16px; */
+    }
+
+    .center {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+
+}
+
+
+@media screen and (max-width: 770px) {
+
+    /* масштабировать шрифты до мобильной версии */
+    .option-sale {
+        /* font-size: 16px; */
+        font-size: 16px;
+        /* margin: 0 clamp(px, vw, 16px); */
+    }
+
+    .to-male {
+        /* font-size: 24px; */
+        font-size: 24px;
+        /* margin: 0 clamp(px, vw, 24px); */
+    }
+
+}
