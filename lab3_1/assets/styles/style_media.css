@@ -21,6 +21,36 @@
         margin-right: 16px;
     }
 
+    .feature-item {
+        /* max-width: 49%; */
+    }
+
+    .image-box {
+        width: 100%;
+    }
+
+    /* .image-box >  img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    } */
+    .image-center {
+
+
+        height: 420px;
+        /* width: 100%; */
+        width: auto;
+
+        height: clamp(420px, 30vw, 284px);
+        ;
+    }
+
+    .image-block {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
 }
 
 
@@ -39,4 +69,77 @@
         /* margin: 0 clamp(px, vw, 24px); */
     }
 
+    .image-promo {
+        display: none;
+    }
+
+    .promo_banner {
+
+        justify-content: center;
+        height: 363px;
+    }
+
+    .firm_logo {
+        margin-bottom: 0.0vw;
+    }
+
+    .firm_logo>h2 { 
+        font-size: clamp(38px, 3vw, 44px);
+    }
+    
+    .firm_logo>p { 
+        font-size: clamp(20px, 2vw, 24px);
+    }
+    .firm_logo>p>span { 
+        font-size: clamp(20px, 2vw, 24px);
+        }
+    .mobile-hide {
+        display: none;
+    }
+
+    .for-all {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        /* flex-wrap: wrap; */
+        flex-wrap: wrap;
+
+    }
+
+    .img_with_text {
+        /* height: 247px; */
+        max-width: none;
+    }
+
+    .img_with_text>a {
+        /* height: 0; */
+        position: relative;
+        /* width:auto; */
+        /* height: auto; */
+    }
+  
+    .item_wide {
+        max-width: 360px;
+        height: 111px;
+        /* не применялось к ссылке */
+        overflow: hidden;
+    }
+
+    .item_wide>a>img {
+        height: 111px;
+        /* без отмены сжималось изображение до контейнера */
+        max-width: none;
+    }
+
+    /* ################ features ################ */
+
+
+    .features {
+        padding: 8px;
+    }
+    .feature-header>h3 {
+        margin-top: 64px;
+    }
 }
+
+@media screen and (max-width: 375px) {}

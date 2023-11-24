@@ -156,8 +156,7 @@ a {
     /* font-size: 32px; 
     font-size: 2vw;*/
     font-size: clamp(24px, 2vw, 32px);
-
-
+ 
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -178,7 +177,7 @@ a {
 /* ################ for-all ################ */
 
 .indentation_f_all {
-    height: 3vw;
+    /* height: 3vw; */
 }
 
 .for-all {
@@ -187,23 +186,29 @@ a {
     max-width: 100%;
 
     margin: 0 auto;
+    margin-top: clamp(64px, 6vw, 65px);
 
 
-    margin-top: 3vw;
-
+ 
     display: flex;
     flex-direction: row;
     justify-content: center;
     /* flex-wrap: wrap; */
     /* row-gap: 30px; */
-    column-gap: 3vw;
+    column-gap:clamp(30px, 3vw, 40px);
+    /* row-gap: 32px; */
+    row-gap:  clamp(30px, 3vw, 40px);
+    
+/* попытка сделать 4 элемент внизу */
+    flex-wrap: wrap;
 }
 
 /* попытка расположить текст по середине */
 .img_with_text {
     position: relative;
     text-align: center;
-    max-width: 33%;
+    /* max-width: 33%; */
+    flex: 1 0 30%;
 }
 
 .img_with_text>a>img {
@@ -265,8 +270,11 @@ a {
 .item_wide {
     /* position: relative; */
     /* text-align: center;  */
-    max-width: 100%;
+    width: 100%;
+    flex: 0 1 100%;
+    /* max-width: 100%; */
     /* align-self: center;  */
+    
 }
 
 
@@ -366,6 +374,7 @@ a {
     font-style: normal;
     font-weight: 300;
     line-height: normal;
+    opacity: 70%;
 }
 
 .f_item_text>span {
