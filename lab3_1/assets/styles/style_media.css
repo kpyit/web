@@ -1,60 +1,145 @@
-@media screen and (max-width: 1140px) {
-    .header {
-        /* как дошли до мин ширины добавить отступы */
-        margin: 0 clamp(32px, 2vw, 48px);
-    }
+@media screen and (max-width: 1270px) {
+    .show_menu {
+        left: calc(100% -  230px);
+    } 
+ }
 
-    /* блок и класс создан специально для отступов */
-    .sect-f-all {
-        padding: 0 16px;
+/* ПЛАНШЕТНАЯ ВЕРСТКА */
+@media screen and (max-width: 767px) { 
+
+    .firm_logo {
+        border-left: clamp(6px, 1vw, 12px) solid #F16D7F;
+
+        >h2 {
+            font-size: clamp(22px, 6vw, 44px);
+        }
+
+        >p {
+            font-size: clamp(12px, 3vw, 24px);
+        }
+
+        >p>span {
+            font-size: clamp(12px, 3vw, 24px);
+        }
     }
 
     .for-all {
-        /* padding-left: 16px; */
-        /* padding-right: 16px; */
-        /* margin-left: 16px; */
-        /* margin-right: 16px; */
+        column-gap: clamp(10px, 2.6vw, 20px);
+
+        row-gap: clamp(10px, 2.6vw, 20px);
+
+        .img_with_text {
+            .centered-text {
+                .option-sale {
+                    font-size: clamp(10px, 2vw, 16px);
+                }
+
+                .to-male {
+                    font-size: clamp(14px, 3.125vw, 24px);
+                }
+            }
+        }
     }
 
-    .center {
+    /* ! возможно не требуется */
+    /* .center {
         margin-left: 16px;
         margin-right: 16px;
-    }
-
-    .feature-item {
-        /* max-width: 49%; */
-    }
-
-    .image-box {
-        width: 100%;
-    }
-
-    /* .image-box >  img {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
     } */
+
+    /* ################ features ################ */
+
+    .sect-features {
+        padding: clamp(8px, 2vw, 16px);
+
+        .list-features {
+            gap: clamp(8px, 2vw, 16px);
+
+            >.feature-item {
+                flex: 1 0 47%;
+            }
+        }
+    } 
+   
+
     .image-center {
-
-
         height: 420px;
         /* width: 100%; */
         width: auto;
-
         height: clamp(420px, 30vw, 284px);
-        ;
     }
 
-    .image-block {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
+    section.s_options { 
+        height: 610px;
+        >.list-options {
+            height: 610px;
+            flex-direction: column;
+            
+
+            >.item-options {
+                flex: 0 0 20%;
+                margin-top: 32px;
+            }
+        }
+    }
+
+    /* ################ s_subscribe ################ */
+    section.s_subscribe  {  
+        height: 693px;
+        height: clamp(550px, 90vw, 693px); 
+
+        background-size: auto  100% ;
+        .suscr-list-items {
+            height: 100%;
+            flex-direction: column; 
+            justify-content: space-evenly;
+
+            >.list-item {
+                >p {
+                    font-size: clamp(18px, 2.6vw, 20px); 
+                }
+                >.suscr-header {
+                    >h2 {font-size: clamp(22px, 3.1vw, 24px); }
+
+                    >p {font-size: clamp(14px, 2.3vw, 18px); }
+                }
+                >.suscr-mail {
+                    width:  clamp(341px, 46.8vw, 359px);;
+                }
+            }
+        }
+        
+
+
+    }
+
+}/* @media screen and (max-width: 767px) */
+
+/* пришлось специальный размер давать и для футера он не влазит */
+@media screen and (max-width: 500px) {
+    footer {
+        
+        >.cont-footer{
+            height: 143px;
+            flex-direction: column-reverse;
+            justify-content: space-around;
+
+            >.social {
+                margin-top: 20px;
+            }
+        }
     }
 
 }
+ 
 
+/* МОБИЛЬНАЯ ВЕРСТКА */
 
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 375px) {
+
+    .mobile-hide {  
+        display: none;
+    }
 
     /* масштабировать шрифты до мобильной версии */
     .option-sale {
@@ -81,65 +166,85 @@
 
     .firm_logo {
         margin-bottom: 0.0vw;
+
+        >h2 {
+            font-size: clamp(38px, 3vw, 44px);
+        }
+
+        >p {
+            font-size: clamp(20px, 2vw, 24px);
+        }
+
+        >p>span {
+            font-size: clamp(20px, 2vw, 24px);
+        }
     }
 
-    .firm_logo>h2 { 
-        font-size: clamp(38px, 3vw, 44px);
-    }
-    
-    .firm_logo>p { 
-        font-size: clamp(20px, 2vw, 24px);
-    }
-    .firm_logo>p>span { 
-        font-size: clamp(20px, 2vw, 24px);
-        }
-    .mobile-hide {
-        display: none;
-    }
+    /* ################ for-all ################ */
+
+
 
     .for-all {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        /* flex-wrap: wrap; */
-        flex-wrap: wrap;
+        /* flex-wrap: wrap;
+        flex-wrap: wrap; */
 
+        .img_with_text { 
+            width: 100%;
+            height: auto;
+            max-width: none;
+            flex: 1 0 90%;
+
+            >a {
+                position: relative;
+            }
+
+
+        }
+
+        .item_wide {
+            max-width: 360px;
+            height: 111px;
+            /* не применялось к ссылке */
+            overflow: hidden;
+
+            >a>img {
+                height: 111px;
+                /* без отмены сжималось изображение до контейнера */
+                /* max-width: none; */ 
+                max-width: none; 
+
+                left: 50%;
+                position: relative;
+                transform: translateX(-50%);
+            }
+
+        }
+ 
     }
 
-    .img_with_text {
-        /* height: 247px; */
-        max-width: none;
-    }
 
-    .img_with_text>a {
-        /* height: 0; */
-        position: relative;
-        /* width:auto; */
-        /* height: auto; */
-    }
-  
-    .item_wide {
-        max-width: 360px;
-        height: 111px;
-        /* не применялось к ссылке */
-        overflow: hidden;
-    }
-
-    .item_wide>a>img {
-        height: 111px;
-        /* без отмены сжималось изображение до контейнера */
-        max-width: none;
-    }
 
     /* ################ features ################ */
 
+    .sect-features {
+        padding: clamp(4px, 2.1vw, 8px);
 
-    .features {
-        padding: 8px;
-    }
-    .feature-header>h3 {
-        margin-top: 64px;
-    }
-}
+        .feature-header>h3 {
+            margin-top: 64px;
+        }
+ 
+        .list-features {
+            gap: clamp(8px, 4.2vw, 16px);
 
-@media screen and (max-width: 375px) {}
+            >.feature-item {
+                flex: 1 0 90%;
+            }
+        }
+    } 
+    
+}/* @media screen and (max-width: 375px) */
+
+ 

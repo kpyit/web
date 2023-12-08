@@ -31,7 +31,7 @@
     src: url("../fonts/Lato-Regular.ttf") format('truetype');
     font-style: normal;
     font-weight: 400;
-} 
+}
 
 * {
     margin: 0;
@@ -46,15 +46,12 @@ a {
     text-decoration: none;
 }
 
-.center {
-    max-width: 1140px;
-    margin-left: auto;
-    margin-right: auto;
-}
 
 .menu_header {
     background-color: #222;
-    margin: 0 auto;
+    /* margin: 0 auto; */
+    /* padding: 0 16px; */
+    padding: 0 clamp(32px, 2vw, 48px);
 }
 
 .header {
@@ -67,7 +64,7 @@ a {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
+    margin: 0 auto;
 }
 
 .logo_find {
@@ -76,9 +73,7 @@ a {
     align-items: center;
     /* gap: 32px; */
     gap: 41px;
-
     /* clamp(32px, 2vw, 48px); */
-
 }
 
 .menu {
@@ -88,6 +83,78 @@ a {
     align-items: center;
     gap: 32px;
 }
+
+/* ################ выпадающее меню ################ */
+/* https://www.w3schools.com/css/css_dropdowns.asp */
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+
+    background-color: #f9f9f9;
+    width: 178px;
+    z-index: 1;
+}
+
+/* Show the dropdown menu on hover */
+/* .dropdown:hover>.dropdown-content { */
+    /* display: block; */
+    /* top: 75px; */
+    /* применять только на малых разрешениях иначе рендерить прямо под кнопкой */
+    /* left: calc(100% -  212px); */
+    /* left: min(1200px, calc(100% -  212px));  */
+/* } */
+
+.show_menu {display: block; top: 75px;}
+
+.dropdown-content {
+    padding: 32px;
+    font-family: Lato;
+    font-style: normal;
+    line-height: normal;
+
+    >h2 {
+        color: #000;
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    >ul {
+        >li {
+            margin-top: 20px;
+            text-decoration: none;
+
+            display: block;
+
+            color: #F16D7F;
+
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        >ul>li {
+            margin-top: 11px;
+
+            text-decoration: none;
+            display: block;
+            padding-left: 22px;
+
+            color: #6F6E6E;
+
+            font-size: 14px;
+            font-weight: 400;
+
+
+        }
+    }
+
+
+
+}
+
+
+
+
 
 /* ################ promo ################ */
 
@@ -100,6 +167,7 @@ a {
     max-width: 1600px;
 
     margin: 0 auto;
+    padding: 0 16px;
 
     display: flex;
     flex-direction: row;
@@ -108,21 +176,20 @@ a {
     justify-content: flex-start;
     /* gap: 64px; */
     /* gap:4.6vw; */
-    /* наигравцись с размерами шрифта вручную нашел
+    /* наигравшись с размерами шрифта вручную нашел
     https://css-tricks.com/how-do-you-do-max-font-size-in-css/ */
     font-size: clamp(39px, 4.6vw, 64px);
-    /* если будет работать в браузерах использовать 
+    /* если не будет работать в браузерах использовать 
     font-size: min(max(16px, 4vw), 22px); */
-}
 
-.promo_banner>img {
-    /* без регулировки ширины через max вылазит за зкран 
-    и создает белую полосу которая портит верстку
-    https://www.browserstack.com/guide/how-to-resize-image-using-css */
-    width: 50%;
-    height: 100%;
+    >img {
+        /* без регулировки ширины через max вылазит за зкран 
+        и создает белую полосу которая портит верстку
+        https://www.browserstack.com/guide/how-to-resize-image-using-css */
+        width: 50%;
+        height: 100%;
+    }
 }
-
 
 .firm_logo {
     /* border-left: 12px solid #F16D7F; */
@@ -135,72 +202,67 @@ a {
     /* margin-bottom: 100px; */
     margin-bottom: 6.250vw;
 
+    >h2 {
+        color: #222;
+
+        font-family: Lato;
+        /* font-size: 48px; 
+        font-size: 3vw;*/
+        font-size: clamp(44px, 3vw, 48px);
+
+        font-style: normal;
+        font-weight: 900;
+        line-height: normal;
+    }
+
+    >p {
+        color: #222;
+        font-family: Lato;
+        /* font-size: 32px; 
+        font-size: 2vw;*/
+        font-size: clamp(24px, 2vw, 32px);
+
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    >p>span {
+        color: #F16D7F;
+        font-family: Lato;
+        /* font-size: 32px;
+        font-size: 2vw; */
+        font-size: clamp(24px, 2vw, 32px);
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
 }
-
-.firm_logo>h2 {
-    color: #222;
-
-    font-family: Lato;
-    /* font-size: 48px; 
-    font-size: 3vw;*/
-    font-size: clamp(44px, 3vw, 48px);
-
-    font-style: normal;
-    font-weight: 900;
-    line-height: normal;
-}
-
-.firm_logo>p {
-    color: #222;
-    font-family: Lato;
-    /* font-size: 32px; 
-    font-size: 2vw;*/
-    font-size: clamp(24px, 2vw, 32px);
- 
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-}
-
-.firm_logo>p>span {
-    color: #F16D7F;
-    font-family: Lato;
-    /* font-size: 32px;
-    font-size: 2vw; */
-    font-size: clamp(24px, 2vw, 32px);
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-}
-
 
 /* ################ for-all ################ */
 
-.indentation_f_all {
-    /* height: 3vw; */
+/* блок и класс создан специально для отступов */
+.sect-f-all {
+    padding: 0 16px;
 }
 
 .for-all {
     /* попытка сделаь резиновый блок */
-    width: 1140px;
-    max-width: 100%;
+    width: 100%;
+    max-width: 1140px;
 
     margin: 0 auto;
     margin-top: clamp(64px, 6vw, 65px);
 
-
- 
     display: flex;
     flex-direction: row;
     justify-content: center;
-    /* flex-wrap: wrap; */
-    /* row-gap: 30px; */
-    column-gap:clamp(30px, 3vw, 40px);
-    /* row-gap: 32px; */
-    row-gap:  clamp(30px, 3vw, 40px);
-    
-/* попытка сделать 4 элемент внизу */
+    /* попытка сделать 4 элемент внизу */
     flex-wrap: wrap;
+
+    column-gap: clamp(20px, 3vw, 40px);
+
+    row-gap: clamp(20px, 3vw, 40px);
 }
 
 /* попытка расположить текст по середине */
@@ -209,11 +271,12 @@ a {
     text-align: center;
     /* max-width: 33%; */
     flex: 1 0 30%;
+
+    >a>img {
+        max-width: 100%;
+    }
 }
 
-.img_with_text>a>img {
-    max-width: 100%;
-}
 
 .centered-text {
     position: absolute;
@@ -274,48 +337,53 @@ a {
     flex: 0 1 100%;
     /* max-width: 100%; */
     /* align-self: center;  */
-    
 }
-
-
 
 /* ################ features ################ */
+.sect-features {
+    padding: 0 16px;
 
-.features {
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
+    >.features-cont {
+        max-width: 1140px;
+        width: 100%;
+
+        margin: 0 auto;
+
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+    }
 }
+
+
 
 .feature-header {
     display: flex;
     flex-flow: column;
     align-items: center;
+
+    >h3 {
+        margin-top: 96px;
+
+        color: #222;
+        font-family: Lato;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    >p {
+        margin-bottom: 48px;
+
+        color: #9F9F9F;
+        font-family: Lato;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
 }
-
-.feature-header>h3 {
-    margin-top: 96px;
-
-    color: #222;
-    font-family: Lato;
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-.feature-header>p {
-    margin-bottom: 48px;
-
-    color: #9F9F9F;
-    font-family: Lato;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-
 
 .list-features {
     display: flex;
@@ -326,26 +394,80 @@ a {
     /* gap: 30px; */
     gap: clamp(16px, 1.875vw, 30px);
 
+    >.feature-item {
+        max-width: 360px;
+        background-color: #F8F8F8;
+        /* По требованиям исправления от преподавателя */
+        position: relative;
+        flex: 1 0 30%;
+
+        >.image-box {
+            position: relative;
+
+            >img {
+                color: #222;
+                max-width: 100%;
+                height: auto;
+            }
+
+            /* затемнение изображения */
+            .overlay-feature {
+                position: absolute;
+                top: 0;
+                /* bottom: 0; */
+                left: 0;
+                /* right: 0; */
+                height: 100%;
+                width: 100%;
+                opacity: 70;
+                background-color: #211616B2;
+
+                display: none;
+
+                >button {
+                    width: 139px;
+                    height: 44px;
+
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+
+                    color: #FFF;
+                    border: solid 1px #FFF;
+                    background-color: inherit;
+
+                    font-family: Lato;
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
+
+                }
+            }
+        }
+
+        >.image-box:hover {
+            >.overlay-feature {
+                display: flex;
+            }
+        }
+
+    }
 }
 
-.feature-item {
-    max-width: 360px;
-    background-color: #F8F8F8;
-}
 
 .f_item_text {
-
     display: flex;
     flex-flow: column;
     justify-content: center;
-}
 
-.f_item_text>img {
-    color: #222;
-}
-
-
-.f_item_text {
     box-sizing: border-box;
     padding: 24px 16px;
 
@@ -354,38 +476,40 @@ a {
     align-items: flex-start;
     justify-content: space-between;
     row-gap: 16px;
+
+    >h4 {
+        color: #000;
+
+        font-family: Lato;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    >p {
+        color: #5D5D5D;
+
+        font-family: Lato;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+        opacity: 70%;
+    }
+
+    >span {
+        color: #F16D7F;
+
+        font-family: Lato;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
 }
 
-.f_item_text>h4 {
-    color: #000;
-
-    font-family: Lato;
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-.f_item_text>p {
-    color: #5D5D5D;
-
-    font-family: Lato;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: normal;
-    opacity: 70%;
-}
-
-.f_item_text>span {
-    color: #F16D7F;
-
-    font-family: Lato;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
 
 /* кнопка внизу */
 .to-catalog {
@@ -393,20 +517,323 @@ a {
     display: flex;
     justify-content: center;
 
+    >button {
+        padding: 15px 39px;
+
+        color: #F26376;
+
+        font-family: Lato;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+
+        background-color: #fff;
+
+        border: 2px solid #FF6A6A;
+        transition: background-color 0.5s;
+    }
+
+
+    >button:hover {
+        background-color: #F16D7F;
+        color: #fff;
+    }
 }
 
-.to-catalog>button {
-    padding: 15px 39px;
 
-    color: #F26376;
+/* ################ s_options ################ */
 
-    font-family: Lato;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
 
-    background-color: #fff; 
- 
-    border: 2px solid #FF6A6A;
+section.s_options {
+    background-color: #222224;
+    height: 341px;
+
+    >.list-options {
+        height: 341px;
+        max-width: 100%;
+        width: 1140px;
+        
+
+        margin: 0 auto;
+        /* padding: 16px; */
+
+
+        display: flex;
+        flex-direction: row;
+        /* разрешаем перенос */
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        gap: clamp(16px, 1.875vw, 30px);
+
+        >.item-options {
+            max-width: 360px;
+            /* отличное свойство решает проблему резинового макета */
+            flex: 1 0 30%;
+
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: flex-start;
+            gap: clamp(12px, 1vw, 16px);
+
+            >.icon-box {
+                margin-bottom: 16px;
+                height: 40px;
+            }
+
+            >h3 {
+                color: #FBFBFB;
+
+                font-family: Lato;
+                font-size: 19.96px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+
+            >p {
+                margin: 0 25px;
+
+                color: #FBFBFB;
+                opacity: 70%;
+
+                text-align: center;
+                font-family: Lato;
+                font-size: 13.972px;
+                font-style: normal;
+                font-weight: 300;
+                line-height: normal;
+            }
+
+        }
+    }
 }
+
+/* ################ s_subscribe ################ */
+
+section.s_subscribe {
+    height: 448px;
+
+    position: relative;
+    background-image: url(/lab3_1/assets/img/bg_subscribe.png );
+    background-repeat: no-repeat;
+    background-position: center;
+
+
+
+    >.overlay_suscr {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 30;
+        background-color: rgba(244, 244, 244, 0.70);
+    }
+
+
+
+    .suscr-list-items {
+        width: 1140px;
+        max-width: 100%;
+        height: 448px;
+
+        margin: 0 auto;
+        /* padding: 16px; */
+
+
+        display: flex;
+        flex-direction: row;
+        /* разрешаем перенос */
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: space-around;
+        gap: clamp(16px, 1.875vw, 30px);
+
+
+
+        >.list-item {
+            max-width: 360px;
+
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: flex-start;
+
+            gap: clamp(24px, 1.875vw, 32px);
+
+
+            &.up {
+                margin-top: 30px;
+            }
+
+            /* отзыв */
+            >img {
+                width: 96px;
+                height: 96px;
+            }
+
+            >p {
+                color: #222224;
+
+                text-align: center;
+                font-family: Lato;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+
+                >span {
+                    font-style: italic;
+                }
+            }
+
+            /* форма ввода почты для подписки */
+            >.suscr-header {
+                >h2 {
+                    color: #222224;
+
+                    text-align: center;
+                    font-family: Lato;
+                    font-size: 24px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 167.2%;
+                    /* 40.128px */
+                }
+
+                >p {
+                    color: #222224;
+
+                    font-family: Lato;
+                    font-size: 18px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 167.2%;
+                }
+            }
+
+            >.suscr-mail {
+                background: #E1E1E1;
+                width: 359px;
+                height: 49px;
+                border-radius: 25px;
+                overflow: hidden;
+
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                align-items: center;
+
+                >input {
+                    width: 170px;
+                    height: 36px;
+
+                    margin-left: 22px;
+
+                    background: #E1E1E1;
+                    border: none;
+                }
+
+                >button {
+                    width: 100px;
+                    height: 49px;
+
+                    background: #F16D7F;
+                    color: #FFF;
+                    border: none;
+
+                    text-align: center;
+                    font-family: Lato;
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                }
+
+
+            }
+        }
+    }
+}
+
+/* ################ footer ################ */
+
+footer {
+    background-color: #222224;
+    padding: 0 32px;
+
+    >.cont-footer {
+        width: 1140px;
+        max-width: 100%;
+        height: 79px;
+
+        margin: 0 auto;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+
+
+        >.copyright-info {
+            >p {
+                color: #FBFBFB;
+
+                font-family: Lato;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+        }
+
+        >.social {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            align-content: center;
+            gap: 7.3px;
+
+            >.social-box {
+                background: #FFF;
+                width: 32px;
+                height: 32px;
+
+                position: relative;
+
+                transition: background-color 0.5s;
+
+                >svg {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+
+            >.social-box:hover {
+                background: #F16D7F;
+
+                >svg path {
+                    fill: #FFFFFF;
+                }
+            }
+        }
+    }
+
+}
+
+/* footer */
