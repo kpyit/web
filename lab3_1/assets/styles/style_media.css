@@ -5,7 +5,7 @@
  }
 
 /* ПЛАНШЕТНАЯ ВЕРСТКА */
-@media screen and (max-width: 767px) { 
+@media screen and (max-width: 768px) { 
 
     .firm_logo {
         border-left: clamp(6px, 1vw, 12px) solid #F16D7F;

@@ -130,22 +130,24 @@ a {
 
             font-size: 14px;
             font-weight: 400;
+
+            >ul>li {
+                margin-top: 11px;
+    
+                text-decoration: none;
+                display: block;
+                padding-left: 22px;
+    
+                color: #6F6E6E;
+    
+                font-size: 14px;
+                font-weight: 400;
+    
+    
+            }
         }
 
-        >ul>li {
-            margin-top: 11px;
 
-            text-decoration: none;
-            display: block;
-            padding-left: 22px;
-
-            color: #6F6E6E;
-
-            font-size: 14px;
-            font-weight: 400;
-
-
-        }
     }
 
 
@@ -619,7 +621,7 @@ section.s_subscribe {
     height: 448px;
 
     position: relative;
-    background-image: url(/lab3_1/assets/img/bg_subscribe.png );
+    background-image: url(/assets/img/bg_subscribe.png );
     background-repeat: no-repeat;
     background-position: center;
 
