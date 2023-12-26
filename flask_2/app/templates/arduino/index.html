@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% import "_macros.html" as macros %}
+
+{% block head %}
+{{ super() }}
+<script src="{{ url_for('static', filename='arduino.js') }}" defer></script>
+{% endblock %}
+
+<!-- суть блока что можно его переоперделить во вложенном шаблоне или дополнить через вызов {{super()}} -->
+{% block title %}Flasky{% endblock %}
+
+{% block page_content %}
+ 
+    <button class="pagination" data-page="1">страница 1</button>
+    <button class="pagination" data-page="2">страница 2</button>
+    <div id="app"></div>
+
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+{{ pagedown.include_pagedown() }}
+{% endblock %}
