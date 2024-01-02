@@ -7,6 +7,9 @@ from app.models import (User, Follow, Role, Permission, Post, Comment)
 # добавление фейковых пользователей через shell
 from app.fake_data import Fake_data
 
+
+
+
 app = create_app() 
 # Для доступа из консоли
 # нормально заработало только после добавления .flaskenv  https://stackoverflow.com/questions/71354617
@@ -49,3 +52,8 @@ def deploy_db():
 # >>> 
 # >>> Role.insert_roles()
 # >>> Fake_data.fake_users(20) 
+
+
+# conda activate Flask
+# cd /d H:\web\flask_2
+# flask --app main.py run --debug
