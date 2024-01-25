@@ -1,0 +1,8 @@
+INFO 2024-01-25 19:42:20,843 autoreload 16936 29516 H:\web\django\lesson_1\myapp\urls.py changed, reloading.
+INFO 2024-01-25 19:42:21,836 autoreload 28832 26752 Watching for file changes with StatReloader
+DEBUG 2024-01-25 19:42:22,454 views 28832 28908 obout_me page accessed
+INFO 2024-01-25 19:42:22,462 basehttp 28832 28908 "GET /obout_me HTTP/1.1" 200 267
+DEBUG 2024-01-25 19:43:23,161 views 28832 28908 index page accessed
+INFO 2024-01-25 19:43:23,163 basehttp 28832 28908 "GET / HTTP/1.1" 200 285
+DEBUG 2024-01-25 19:43:38,735 views 28832 28908 index page accessed
+INFO 2024-01-25 19:43:38,738 basehttp 28832 28908 "GET / HTTP/1.1" 200 425
