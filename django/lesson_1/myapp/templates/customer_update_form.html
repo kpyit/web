@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block head %}
+   {{ form.media }}
+{% endblock %}
+
+{% block body %}
+<h1>Edit customer</h1>
+<form method='post' action=".">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type='submit' value='Save changes' class='btn btn-primary' />
+</form>
+{% endblock %}

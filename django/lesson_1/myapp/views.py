@@ -43,3 +43,61 @@ def about(request):
 
 
 
+# lab2
+
+from .models import *
+from django.shortcuts import render, redirect
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+
+def homepage(request):
+    context = {
+        'customers': Customer.objects.all(),
+        'products': Product.objects.all(),
+       'orders': Order.objects.all(),
+    }
+    return render(request, 'homepage.html', context)
+
+class CustomerCreate(CreateView):
+    model = Customer
+    fields = ['name', 'email', 'phone_number', 'address']
+    success_url = '/'
+
+class CustomerUpdate(UpdateView):
+    model = Customer
+    fields = ['name', 'email', 'phone_number', 'address']
+    template_name_suffix = '_update_form'
+    success_url = '/'
+
+class CustomerDelete(DeleteView):
+    model = Customer
+    success_url = '/'
+
+class ProductCreate(CreateView):
+    model = Product
+    fields = ['name', 'description', 'price', 'quantity']
+    success_url = '/'
+
+class ProductUpdate(UpdateView):
+    model = Product
+    fields = ['name', 'description', 'price', 'quantity']
+    template_name_suffix = '_update_form'
+    success_url = '/'
+
+class ProductDelete(DeleteView):
+    model = Product
+    success_url = '/'
+
+class OrderCreate(CreateView):
+    model = Order
+    fields = ['good', 'order_total_amount']
+    success_url = '/'
+
+class OrderUpdate(UpdateView):
+    model = Order
+    fields = ['good', 'order_total_amount']
+    template_name_suffix = '_update_form'
+    success_url = '/'
+
+class OrderDelete(DeleteView):
+    model = Order
+    success_url = '/'

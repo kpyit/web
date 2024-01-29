@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block body %}
+<h1>Customers</h1>
+{% if customers %}
+    <table>
+        <tr><th>Name</th><th>Email</th><th>Phone Number</th><th>Address</th></tr>
+        {% for customer in customers %}
+            <tr><td>{{ customer.name }}</td><td>{{ customer.email }}</td><td>{{ customer.phone_number }}</td><td>{{ customer.address }}</td></tr>
+        {% endfor %}
+    </table>
+{% else %}
+    <p>No Customers found.</p>
+{% endif %}
+
+<br />
+
+<h1>Products</h1>
+{% if products %}
+    <table>
+        <tr><th>Name</th><th>Description</th><th>Price</th><th>Quantity</th><th>Date Added</th></tr>
+        {% for product in products %}
+            <tr><td>{{ product.name }}</td><td>{{ product.description|slice:"0:50" }}...</td><td>{{ product.price }}</td><td>{{ product.quantity }}</td><td>{{ product.date_added }}</td></tr>
+        {% endfor %}
+    </table>
+{% else %}
+    <p>No Products found.</p>
+{% endif %}
+
+<br />
+
+<h1>Orders</h1>
+{% if orders %}
+    <table>
+        <tr><th>ID</th><th>Customer Name</th><th>Total Amount</th><th>Placed Date</th></tr>
+        {% for order in orders %}
+            <tr><td><a href="{% url 'myapp:update_order' pk=order.pk %}">{{ order.id }}</a></td><td>{{ order.customer }}</td><td>{{ order.order_total_amount }}</td><td>{{ order.order_date }}</td></tr>
+        {% endfor %}
+    </table>
+{% else %}
+    <p>No Orders found.</p>
+{% endif %}
+
+<div style="text-align: center; margin-top: 2em;">
+    <a href="{% url 'myapp.views.CustomerCreate' %}">Add new customer</a> 
+                   
+{% endblock %}
