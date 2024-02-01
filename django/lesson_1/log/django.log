@@ -354,3 +354,79 @@ INFO 2024-01-29 21:15:32,068 basehttp 33064 4828 - Broken pipe from ('127.0.0.1'
 INFO 2024-01-29 21:15:37,205 basehttp 33064 26184 "GET /create_customer/ HTTP/1.1" 200 1187
 INFO 2024-01-29 21:15:52,428 basehttp 33064 26184 "POST /create_customer/ HTTP/1.1" 302 0
 INFO 2024-01-29 21:15:52,443 basehttp 33064 26184 "GET / HTTP/1.1" 200 1103
+INFO 2024-02-01 16:24:17,815 autoreload 25824 24024 Watching for file changes with StatReloader
+ERROR 2024-02-01 16:24:56,453 log 25824 26716 Internal Server Error: /product_list/42/week/
+Traceback (most recent call last):
+  File "C:\Users\pk\anaconda3\envs\django\Lib\site-packages\django\db\models\fields\__init__.py", line 2112, in get_prep_value
+    return int(value)
+           ^^^^^^^^^^
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'builtin_function_or_method'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\pk\anaconda3\envs\django\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pk\anaconda3\envs\django\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\web\django\lesson_1\myapp\views.py", line 123, in product_list
+    cur_customer = Customer.objects.get(pk=id)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pk\anaconda3\envs\django\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pk\anaconda3\envs\django\Lib\site-packages\django\db\models\query.py", line 633, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pk\anaconda3\envs\django\Lib\site-packages\django\db\models\query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pk\anaconda3\envs\django\Lib\site-packages\django\db\models\query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\pk\anaconda3\envs\django\Lib\site-packages\django\db\models\query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\pk\anaconda3\envs\django\Lib\site-packages\django\db\models\sql\query.py", line 1602, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pk\anaconda3\envs\django\Lib\site-packages\django\db\models\sql\query.py", line 1634, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pk\anaconda3\envs\django\Lib\site-packages\django\db\models\sql\query.py", line 1548, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pk\anaconda3\envs\django\Lib\site-packages\django\db\models\sql\query.py", line 1378, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pk\anaconda3\envs\django\Lib\site-packages\django\db\models\lookups.py", line 30, in __init__
+    self.rhs = self.get_prep_lookup()
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pk\anaconda3\envs\django\Lib\site-packages\django\db\models\lookups.py", line 362, in get_prep_lookup
+    return super().get_prep_lookup()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pk\anaconda3\envs\django\Lib\site-packages\django\db\models\lookups.py", line 88, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pk\anaconda3\envs\django\Lib\site-packages\django\db\models\fields\__init__.py", line 2114, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <built-in function id>.
+ERROR 2024-02-01 16:24:56,465 basehttp 25824 26716 "GET /product_list/42/week/ HTTP/1.1" 500 135769
+WARNING 2024-02-01 16:24:56,830 log 25824 26716 Not Found: /favicon.ico
+WARNING 2024-02-01 16:24:56,831 basehttp 25824 26716 "GET /favicon.ico HTTP/1.1" 404 4303
+INFO 2024-02-01 16:31:07,679 autoreload 25824 24024 H:\web\django\lesson_1\myapp\views.py changed, reloading.
+INFO 2024-02-01 16:31:08,709 autoreload 17044 16368 Watching for file changes with StatReloader
+INFO 2024-02-01 16:31:09,204 basehttp 17044 27052 "GET /product_list/42/week/ HTTP/1.1" 200 91
+INFO 2024-02-01 16:31:43,294 autoreload 17044 16368 H:\web\django\lesson_1\myapp\views.py changed, reloading.
+INFO 2024-02-01 16:31:44,327 autoreload 27368 26024 Watching for file changes with StatReloader
+INFO 2024-02-01 16:33:13,517 basehttp 27368 4948 "GET /product_list/42/week/ HTTP/1.1" 200 174
+INFO 2024-02-01 16:33:29,659 basehttp 27368 4948 "GET /product_list/43/week/ HTTP/1.1" 200 174
+INFO 2024-02-01 16:33:41,149 basehttp 27368 4948 "GET /product_list/43/year/ HTTP/1.1" 200 990
+INFO 2024-02-01 16:35:22,042 basehttp 27368 4948 "GET /product_list/43/year/ HTTP/1.1" 200 1129
+INFO 2024-02-01 16:35:33,825 basehttp 27368 4948 "GET /product_list/43/month/ HTTP/1.1" 200 170
+INFO 2024-02-01 16:35:43,286 basehttp 27368 4948 "GET /product_list/42/month/ HTTP/1.1" 200 170
+INFO 2024-02-01 16:35:51,961 basehttp 27368 4948 "GET /product_list/44/month/ HTTP/1.1" 200 713
+INFO 2024-02-01 16:36:47,408 basehttp 27368 4948 "GET /product_list/44/month/ HTTP/1.1" 200 746
+INFO 2024-02-01 16:37:10,955 basehttp 27368 4948 "GET /product_list/44/month/ HTTP/1.1" 200 746
+INFO 2024-02-01 16:37:57,618 autoreload 27368 26024 H:\web\django\lesson_1\myapp\views.py changed, reloading.
+INFO 2024-02-01 16:37:58,669 autoreload 27004 13100 Watching for file changes with StatReloader

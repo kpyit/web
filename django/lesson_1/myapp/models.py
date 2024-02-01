@@ -55,7 +55,9 @@ class Order(models.Model):
 
     # Другие поля модели заказа
     order_total_amount = models.DecimalField(max_digits=10, decimal_places=2)
-    order_date = models.DateTimeField(auto_now_add=True)#'order placement date'
+    # order_date = models.DateTimeField(auto_now_add=True)#'order placement date'
+    order_date = models.DateTimeField()#'order placement date'
 
     def __str__(self):
         return f'{self.customer} - {self.id}'
+     

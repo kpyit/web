@@ -1,7 +1,8 @@
 from django.shortcuts import render
 
 # Create your views here.
-from django.http import HttpResponse
+from django.http import HttpResponse,Http404
+
 
 import logging
 
@@ -101,3 +102,37 @@ class OrderUpdate(UpdateView):
 class OrderDelete(DeleteView):
     model = Order
     success_url = '/'
+    
+
+from django.utils import timezone 
+
+
+# http://127.O.O.1:8000/product_list/42/week/
+def product_list(request,id_user, period):
+    now = timezone.now()
+    if period == 'week':
+        start_date = now - timezone.timedelta(days=7)
+    elif period == 'month':
+        start_date = now - timezone.timedelta(days=30)
+    elif period == 'year':
+        start_date = now - timezone.timedelta(days=365)
+    else:
+        raise ValueError('Invalid period')
+    
+    try:
+        cur_customer = Customer.objects.get(pk=id_user)
+        # context = {'customer': customer}        
+    except Customer.DoesNotExist:
+        raise Http404("Customer does not exist")
+
+    # customer_orders = Order.objects.filter(customer=request.user, order_date__gte=start_date)
+    customer_orders = Order.objects.filter(customer=cur_customer, order_date__gte=start_date)
+    products = Product.objects.filter(order__in=customer_orders).distinct()
+
+    return render(request, 'product_list.html', {'cur_customer': cur_customer,'products': products,'customer_orders':customer_orders})
+ 
+
+# В модифицированной версии вашей функции я добавил `customer_id=id_user` 
+# в качестве дополнительного условия при фильтрации Заказов. 
+# Это позволит ограничить результаты только теми, которые связаны с указанным идентификатором пользователя.
+# Убедитесь, что вы заменили `id_user` на фактическое имя переменной или значение, содержащее нужный идентификатор пользователя.

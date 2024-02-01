@@ -18,4 +18,7 @@ urlpatterns = [
     path('create_order/', OrderCreate.as_view(), name="create_order"),
     path('<int:pk>/update_order/', OrderUpdate.as_view()),
     path('<int:pk>/delete_order/', OrderDelete.as_view()),  
+    
+    # 3 задание 
+    path('product_list/<int:id_user>/<str:period>/', product_list),      
 ] 

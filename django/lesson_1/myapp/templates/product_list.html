@@ -1,0 +1,18 @@
+<h1>продукты</h1>
+<ul>
+{% for product in products %}
+    <li>{{ product.name }}</li>
+{% empty %}
+    <li>Вы ничего не добавили</li>
+{% endfor %}
+</ul>
+
+<h2>Даты заказов пользователя <br>
+    {{cur_customer.name}}, {{cur_customer.email}}</h2>
+<ul>
+    {% for order in customer_orders %}
+        <li>{{ order.order_date }}</li>
+    {% empty %}
+        <li>Вы ничего не добавили</li>
+    {% endfor %}
+</ul>
