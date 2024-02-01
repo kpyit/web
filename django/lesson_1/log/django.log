@@ -347,3 +347,10 @@ ERROR 2024-01-29 21:05:36,198 basehttp 1108 29644 "POST /create_product/ HTTP/1.
 INFO 2024-01-29 21:13:48,968 autoreload 1108 29940 H:\web\django\lesson_1\myapp\models.py changed, reloading.
 INFO 2024-01-29 21:13:49,965 autoreload 32968 30796 Watching for file changes with StatReloader
 INFO 2024-01-29 21:15:22,632 autoreload 33064 14744 Watching for file changes with StatReloader
+INFO 2024-01-29 21:15:31,893 basehttp 33064 4828 "POST /create_product/ HTTP/1.1" 302 0
+INFO 2024-01-29 21:15:31,938 basehttp 33064 4828 "GET / HTTP/1.1" 200 924
+WARNING 2024-01-29 21:15:32,068 log 33064 4828 Not Found: /favicon.ico
+INFO 2024-01-29 21:15:32,068 basehttp 33064 4828 - Broken pipe from ('127.0.0.1', 54875)
+INFO 2024-01-29 21:15:37,205 basehttp 33064 26184 "GET /create_customer/ HTTP/1.1" 200 1187
+INFO 2024-01-29 21:15:52,428 basehttp 33064 26184 "POST /create_customer/ HTTP/1.1" 302 0
+INFO 2024-01-29 21:15:52,443 basehttp 33064 26184 "GET / HTTP/1.1" 200 1103
