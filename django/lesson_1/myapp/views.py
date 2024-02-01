@@ -130,9 +130,3 @@ def product_list(request,id_user, period):
     products = Product.objects.filter(order__in=customer_orders).distinct()
 
     return render(request, 'product_list.html', {'cur_customer': cur_customer,'products': products,'customer_orders':customer_orders})
- 
-
-# В модифицированной версии вашей функции я добавил `customer_id=id_user` 
-# в качестве дополнительного условия при фильтрации Заказов. 
-# Это позволит ограничить результаты только теми, которые связаны с указанным идентификатором пользователя.
-# Убедитесь, что вы заменили `id_user` на фактическое имя переменной или значение, содержащее нужный идентификатор пользователя.

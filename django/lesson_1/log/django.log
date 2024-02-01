@@ -435,3 +435,5 @@ INFO 2024-02-01 16:39:01,701 basehttp 27004 24848 "GET /product_list/44/month/ H
 INFO 2024-02-01 16:39:12,007 basehttp 27004 24848 "GET /product_list/44/month/ HTTP/1.1" 200 810
 INFO 2024-02-01 16:39:12,934 basehttp 27004 24848 "GET /product_list/44/month/ HTTP/1.1" 200 810
 INFO 2024-02-01 16:39:20,914 basehttp 27004 24848 "GET /product_list/44/month/ HTTP/1.1" 200 814
+INFO 2024-02-01 16:46:43,703 autoreload 27004 13100 H:\web\django\lesson_1\myapp\views.py changed, reloading.
+INFO 2024-02-01 16:46:44,752 autoreload 28248 30252 Watching for file changes with StatReloader
