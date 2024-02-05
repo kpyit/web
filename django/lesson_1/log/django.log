@@ -1240,3 +1240,4 @@ INFO 2024-02-05 19:40:52,765 basehttp 32192 29432 "POST /product/4/form_image/ H
 INFO 2024-02-05 19:40:54,391 basehttp 32192 29432 "POST /product/4/form_image/ HTTP/1.1" 200 957
 INFO 2024-02-05 19:41:17,779 autoreload 32192 23848 H:\web\django\lesson_1\myapp\views.py changed, reloading.
 INFO 2024-02-05 19:41:18,810 autoreload 3240 15668 Watching for file changes with StatReloader
+INFO 2024-02-05 19:41:27,349 basehttp 3240 2576 "POST /product/4/form_image/ HTTP/1.1" 200 957
