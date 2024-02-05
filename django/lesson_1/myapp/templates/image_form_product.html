@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block body %}
+<h2>загрузка изображения для продукта "{{cur_product.name }}"</h2>
+<div>{{cur_product.image }}</div>
+
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_div }}
+    <input type="submit" value="Отправить">
+</form> 
+{% endblock %}

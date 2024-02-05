@@ -16,9 +16,12 @@ urlpatterns = [
     path('<int:pk>/update_product/', ProductUpdate.as_view()),
     path('<int:pk>/delete_product/', ProductDelete.as_view()),
     path('create_order/', OrderCreate.as_view(), name="create_order"),
-    path('<int:pk>/update_order/', OrderUpdate.as_view()),
+    path('<int:pk>/update_order/', OrderUpdate.as_view(), name="update_order"),
     path('<int:pk>/delete_order/', OrderDelete.as_view()),  
     
     # 3 задание 
     path('product_list/<int:id_user>/<str:period>/', product_list),      
+    
+    path('product/<int:pk_prod>/form_image/', product_add_image, name='product_upload_image'),  
+    
 ] 

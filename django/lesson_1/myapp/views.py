@@ -2,6 +2,11 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.http import HttpResponse,Http404
+from django.core.files.storage import FileSystemStorage
+from django.utils import timezone 
+
+
+from .forms import ImageForm
 
 
 import logging
@@ -104,7 +109,7 @@ class OrderDelete(DeleteView):
     success_url = '/'
     
 
-from django.utils import timezone 
+
 
 
 # http://127.O.O.1:8000/product_list/42/week/
@@ -130,3 +135,52 @@ def product_list(request,id_user, period):
     products = Product.objects.filter(order__in=customer_orders).distinct()
 
     return render(request, 'product_list.html', {'cur_customer': cur_customer,'products': products,'customer_orders':customer_orders})
+
+# pk - первичный ключ
+# http://127.0.0.1:8000/product/4/form_image/
+def product_add_image(request, pk_prod):
+    # загрузка продукта
+    try:
+        cur_product = Product.objects.get(pk=pk_prod)
+        # context = {'cur_product': cur_product}        
+    except Customer.DoesNotExist:
+        raise Http404("Customer does not exist")
+    logger.info('user getted')
+    
+    if request.method == 'POST':
+        logger.info('image POST')
+        # form = ImageForm(request.POST, request.FILES)
+        form = ImageForm(request.POST,request.FILES)
+        logger.info('request.FILES')
+        if form.is_valid():
+            logger.info('image'+form.cleaned_data['image_l'].name)
+        # image = form['image']
+            image_ll = form.cleaned_data['image_l']
+            logger.info('igm  '+image_ll.name)
+            
+            fs = FileSystemStorage()# работа с файловой системой
+            fs.save(image_ll.name, image_ll)
+            
+            cur_product.photo = image_ll.name
+            cur_product.save()
+        else:
+            logger.info('not valid')
+            
+        # form = ImageForm()
+        return render(request, 'image_form_product.html', {'form':form,'cur_product': cur_product})
+
+
+    else: 
+        form = ImageForm()
+        return render(request, 'image_form_product.html', {'form':form,'cur_product': cur_product})
+            
+        
+
+
+
+
+
+    
+
+
+

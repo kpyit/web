@@ -2,7 +2,6 @@ from django.db import models
 
 # Create your models here.
 
-
 # class User(models.Model):
 #     name = models.CharField(max_length=100)
 #     email = models.EmailField()
@@ -23,7 +22,6 @@ from django.db import models
 #     products = models.ManyToManyField(Product)
 #     date_ordered = models.DateTimeField(auto_now_add=True)#автоустановка
 #     total_price = models.DecimalField(max_digits=8, decimal_places=2)# стандарнтная запись
-     
 
 class Customer(models.Model):
     # Поля модели клиента
@@ -41,7 +39,9 @@ class Product(models.Model):
     description = models.TextField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
     quantity = models.PositiveSmallIntegerField()
-    date_added = models.DateField(auto_now_add=True)#'date added'
+    date_added = models.DateField(auto_now_add=True)
+    photo = models.CharField(max_length=255, default = "")
+    # photo = models.ImageField(upload_to="product_photos/") # Adding Image Field
 
     def __str__(self):
         return self.name
