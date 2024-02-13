@@ -1,2 +1,12 @@
+asgiref
+Django
+Faker
+pillow
+python-dateutil
 setuptools==68.2.2
+six
+sqlparse
+typing_extensions
 wheel==0.41.2
+mysqlclient
+python-dotenv

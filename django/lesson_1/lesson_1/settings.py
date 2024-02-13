@@ -24,12 +24,20 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-#0()0fnq+-i0w=!x1r!y-#k4*+l@rtb1^+624fg*)@fo_i7znr'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+DEBUG = False
+
+# для продакшена
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+
+SECRET_KEY = os.getenv('SECRET_KEY') # генерируется на сервере
 
 # ALLOWED_HOSTS = []
 ALLOWED_HOSTS = [
     '127.0.0.1',
     '192.0.1.45 ',#
+    'appliedEngineeringPK.pythonanywhere.com',  # чтобы не блокировались запросы от самого себя
 ]
 
 
@@ -81,13 +89,27 @@ WSGI_APPLICATION = 'lesson_1.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+# для сайта база mysql
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    'ENGINE': 'django.db.backends.mysql',
+    'NAME': 'appliedEngineeri$default',
+    'USER': 'appliedEngineeri',
+    'PASSWORD': os.getenv('MYSQL_PASSWORD'),
+    'HOST': 'appliedEngineeringPK.mysql.pythonanywhere-services.com',
+    'OPTIONS': {
+        'init_command': "SET NAMES 'utf8mb4';SET sql_mode='STRICT_TRANS_TABLES'",
+        'charset': 'utf8mb4',
+        },
     }
 }
+
 
 
 # Password validation
@@ -157,7 +179,8 @@ LOGGING = {
     },
     'loggers':{
         'django': {# лог всего приложения
-            'handlers':['console', 'file'],
+            # 'handlers':['console', 'file'],
+            'handlers':['console'],
             'level': 'INFO',
         },
         'myapp':{
@@ -174,4 +197,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 # для статичных файлов
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles/')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles/')
+# менять под выгрузку пришлось
+STATIC_ROOT = os.path.join(BASE_DIR / 'static/')
